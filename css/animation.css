@@ -1,0 +1,145 @@
+/* Cyberpunk Keyframe Animations */
+@keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes slideInLeft {
+    from {
+      transform: translateX(-100px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideInRight {
+    from {
+      transform: translateX(100px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Cyberpunk Specific Animations */
+  @keyframes cyberpunk-pulse {
+    0% { opacity: 0.8; }
+    50% { opacity: 1; text-shadow: 0 0 10px var(--cyberpunk-blue); }
+    100% { opacity: 0.8; }
+  }
+  
+  @keyframes grid-move {
+    0% { background-position: 0 0; }
+    100% { background-position: 40px 40px; }
+  }
+  
+  @keyframes scanline {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 100%; }
+  }
+  
+  @keyframes blink {
+    from, to { opacity: 1; }
+    50% { opacity: 0; }
+  }
+  
+  /* Cyberpunk Animation Classes */
+  .animated-text {
+    animation: fadeIn 1s ease-out forwards;
+  }
+  
+  .section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  
+  .section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .project-card {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s ease;
+  }
+  
+  .project-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .gallery-item {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  
+  .gallery-item.visible {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  /* Cyberpunk Text Effects */
+  h1, h2, h3 {
+    animation: cyberpunk-pulse 3s ease infinite;
+  }
+  
+  .cursor {
+    animation: blink 1s step-end infinite;
+  }
+  
+  /* Delay animations for staggered effect */
+  .project-card:nth-child(1) { transition-delay: 0.1s; }
+  .project-card:nth-child(2) { transition-delay: 0.2s; }
+  .project-card:nth-child(3) { transition-delay: 0.3s; }
+  
+  .gallery-item:nth-child(1) { transition-delay: 0.1s; }
+  .gallery-item:nth-child(2) { transition-delay: 0.2s; }
+  .gallery-item:nth-child(3) { transition-delay: 0.3s; }
+  .gallery-item:nth-child(4) { transition-delay: 0.4s; }
+  
+  /* Hover animations */
+  .btn:hover {
+    animation: pulse 0.5s ease;
+  }
+  
+  .social-icon:hover {
+    animation: pulse 0.5s ease;
+  }
